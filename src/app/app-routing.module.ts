@@ -8,9 +8,62 @@ const routes: Routes = [
     component:PortadaComponent
   },
   {
-    path:'post/:variable',
+    path:'home',
     component:PortadaComponent
-  }
+  },
+  // {
+  //   path:'empresa',
+  //   component:
+  // },
+  // {
+  //   path:'quiSom',
+  //   component:
+  // },
+  // {
+  //   path:'eCommers',
+  //   component:
+  // },
+  // {
+  //   path:'elsPreus',
+  //   component:
+  // },
+  // {
+  //   path:'onSomE',
+  //   component:
+  // },
+  // {
+  //   path:'perqueUnirse',
+  //   component:
+  // },
+  // {
+  //   path:'contacta',
+  //   component:
+  // },
+  // {
+  //   path:'laFabrica',
+  //   component:
+  // },
+  // {
+  //   path:'onSomF',
+  //   component:
+  // },
+  // {
+  //   path:'elProces',
+  //   component:
+  // },
+  // {
+  //   path:'laCervesa',
+  //   component:
+  // },
+  // {
+  //   path: 'profile',
+  //   component: ,
+  //   canActivate: [AuthGuard],
+  // },
+  //   path: 'tasques',
+  //   component: ,
+  //   canActivate: [AuthGuard],
+  // },
 ];
 
 @NgModule({
