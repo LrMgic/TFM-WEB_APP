@@ -1,0 +1,55 @@
+<button type="button" class="btn btn-secondary btn-block m-1" data-toggle="modal"
+  data-target="#loginModal">Identificat</button>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+  aria-hidden="true">
+  <div *ngIf="email.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="email.errors && (email.touched || email.dirty)">
+      <span *ngIf="email.errors.required">Es requereix introduir el correu electronic.</span>
+      <span *ngIf="email.errors.pattern">El format del correu electronic no es correcte.</span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="password.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="password.errors && (password.touched || password.dirty)">
+      <span *ngIf="password.errors.required">Es requereix introduir la contrasenya</span>
+      <span *ngIf="password.errors.minlength">La longitud de la contrasenya ha de ser minim de 8 caracters</span>
+      <span *ngIf="password.errors.maxlength">La longitud de la contrasenya ha de ser maxim de 16 caracters</span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <p id="loginFeedback"></p>
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Identificat</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" #closeBtn>
+        </button>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="email" class="col-form-label">Correu electronic:</label>
+            <input type="email" class="form-control" [formControl]="email" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-form-label">Contrasenya: </label>
+            <input type="password" class="form-control" [formControl]="password">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Enviar</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

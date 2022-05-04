@@ -1,73 +1,39 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PortadaComponent } from './Components/portada/portada.component';
+import { ClientGuard } from './client/Guards/client.guard';
+import { TreballadorGuard } from './treballador/Guards/treballador.guard';
 
 const routes: Routes = [
   {
-    path:'',
-    component:PortadaComponent
+    path: '',
+    redirectTo: 'portada/home',
+    pathMatch: 'full',
   },
   {
-    path:'home',
-    component:PortadaComponent
+    path: 'portada',
+    loadChildren: () =>
+      import('./portada/portada.module').then((m) => m.PortadaModule),
+    outlet: 'navbarPortada',
   },
-  // {
-  //   path:'empresa',
-  //   component:
-  // },
-  // {
-  //   path:'quiSom',
-  //   component:
-  // },
-  // {
-  //   path:'eCommers',
-  //   component:
-  // },
-  // {
-  //   path:'elsPreus',
-  //   component:
-  // },
-  // {
-  //   path:'onSomE',
-  //   component:
-  // },
-  // {
-  //   path:'perqueUnirse',
-  //   component:
-  // },
-  // {
-  //   path:'contacta',
-  //   component:
-  // },
-  // {
-  //   path:'laFabrica',
-  //   component:
-  // },
-  // {
-  //   path:'onSomF',
-  //   component:
-  // },
-  // {
-  //   path:'elProces',
-  //   component:
-  // },
-  // {
-  //   path:'laCervesa',
-  //   component:
-  // },
-  // {
-  //   path: 'profile',
-  //   component: ,
-  //   canActivate: [AuthGuard],
-  // },
-  //   path: 'tasques',
-  //   component: ,
-  //   canActivate: [AuthGuard],
-  // },
+  {
+    path: 'client',
+    loadChildren: () =>
+      import('./client/client.module').then((m) => m.ClientModule),
+    canActivate: [ClientGuard],
+  },
+  {
+    path: 'treballador',
+    loadChildren: () =>
+      import('./treballador/treballador.module').then(
+        (m) => m.TreballadorModule
+      ),
+    canActivate: [TreballadorGuard],
+  },
+  { path: '**', redirectTo: 'portada/home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,48 @@
+<nav class="navbar position-relative fix-top">
+  <div class="navbar-container container">
+    <input type="checkbox" name="" id="">
+    <button type="button" class="btn btn-link hamburger-lines p-0">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </button>
+    <div class="d-flex justify-content-around">
+      <ul class="menu-items">
+        <li><button type="button" class="btn btn-link" (click)="home()">Noticies</button>
+        </li>
+        <li><button type="button" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonEmpresa"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="empresa()">L'empresa</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonEmpresa">
+            <button class="dropdown-item btn btn-link" type="button" (click)="quiSom()">Qui som</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="eCommers()">e-Commers</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="elsPreus()">Els preus</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="onSomE()">On som</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="perqueUnirse()">Per què unir-se</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="contacta()">Contacta amb
+              nosaltres</button>
+          </div>
+        </li>
+        <li><button type="button" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonFabrica"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="laFabrica()">La Fabrica</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonFabrica">
+            <button class="dropdown-item btn btn-link" type="button" (click)="onSomF()">On som</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="elProces()">Procés de fabricació</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="contacta()">Contacta amb
+              nosaltres</button>
+          </div>
+        </li>
+        <li><button type="button" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonCervesa"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="laCervesa()">La cervesa</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonCervesa">
+            <button class="dropdown-item btn btn-link" type="button" (click)="cervesesPopulars()">Populars</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="repComanda()">Repetir comanda</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="receptes()">Receptes</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="ingredients()">Ingredients</button>
+            <button class="dropdown-item btn btn-link" type="button" (click)="col_labora()">Col·labora</button>
+          </div>
+        </li>
+        <li><button type="button" class="btn btn-link" (click)="tasques()">Seguiment</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -5,31 +5,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './Components/footer/footer.component';
-import { HeaderComponent } from './Components/header/header.component';
-import { LoginComponent } from './Components/login/login.component';
-import { NavbarComponent } from './Components/navbar/navbar.component';
-import { PortadaComponent } from './Components/portada/portada.component';
-import { AuthInterceptorService } from './Services/auth-interceptor.service';
-import { RegisterComponent } from './Components/register/register.component';
-
+import { FooterComponent } from './user/Components/footer/footer.component';
+import { HeaderComponent } from './user/Components/header/header.component';
+import { LoginComponent } from './user/Components/login/login.component';
+import { NavbarComponent } from './user/Components/navbar/navbar.component';
+import { RegisterComponent } from './user/Components/register/register.component';
+import { AuthInterceptorService } from './user/Services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    PortadaComponent,
     HeaderComponent,
-    NavbarComponent,
+    FooterComponent,
     LoginComponent,
     RegisterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [
     {
@@ -38,6 +35,6 @@ import { RegisterComponent } from './Components/register/register.component';
       multi: true,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

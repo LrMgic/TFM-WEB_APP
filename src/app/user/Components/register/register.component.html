@@ -1,0 +1,161 @@
+<button type="button" class="btn btn-primary btn-block m-1" data-toggle="modal"
+  data-target="#registerModal">Registrat</button>
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+  aria-hidden="true">
+
+  <div *ngIf="name.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="name.errors && (name.touched || name.dirty)">
+      <span *ngIf="name.errors.required">Es necesari introduir un nom</span>
+      <span *ngIf="name.errors.minlength">
+        El nom ha de tenir com a minim 5 caracters.
+      </span>
+      <span *ngIf="name.errors.maxlength">
+        El nom ha de tenir com a màxom 25 caracters.
+      </span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="surname_1.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="surname_1.errors && (surname_1.touched || surname_1.dirty)">
+      <span *ngIf="surname_1.errors.required">Es necesari introduir un cognom</span>
+      <span *ngIf="surname_1.errors.minlength">
+        El primer cognom ha de tenir com a minim 5 caracters.
+      </span>
+      <span *ngIf="surname_1.errors.maxlength">
+        El primer cognom ha de tenir com a màxom 25 caracters.
+      </span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="surname_2.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="surname_2.errors && (surname_2.touched || surname_2.dirty)">
+      <span *ngIf="surname_2.errors.minlength">
+        El segon cognom ha de tenir com a minim 5 caracters.
+      </span>
+      <span *ngIf="surname_2.errors.maxlength">
+        El segon cognom ha de tenir com a màxom 25 caracters.
+      </span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="alias.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="alias.errors && (alias.touched || alias.dirty)">
+      <span *ngIf="alias.errors.required">Es necesari introduir un sobrenom</span>
+      <span *ngIf="alias.errors.minlength">
+        El sobrenom ha de tenir minim 5 caracters.
+      </span>
+      <span *ngIf="alias.errors.maxlength">
+        El sobrenom ha de tenir com a màxom 25 caracters.
+      </span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="birth_date.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="birth_date.errors && (birth_date.touched || birth_date.dirty)">
+      <span *ngIf="birth_date.errors.required">Es necesari introduir la data de naixement</span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="email.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="email.errors && (email.touched || email.dirty)">
+      <span *ngIf="email.errors.required">Es necesari introduir un correu electronic</span>
+      <span *ngIf="email.errors.pattern">El format del correu electronic no es correcte.</span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="password.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="password.errors && (password.touched || password.dirty)">
+      <span *ngIf="password.errors.required">Es necesari una contrasenya</span>
+      <span *ngIf="password.errors.minlength">
+        La contrasenya ha de tenir al menys 8 caracters.
+      </span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="worker.errors" class="m-3">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="worker.errors && (worker.touched || worker.dirty)">
+      <span *ngIf="worker.errors.pattern">El número de treballador no es correcte.</span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+
+
+  <p id="registerFeedback"></p>
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Identificat</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" #closeBtn>
+        </button>
+      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name" class="col-form-label">Nom: </label>
+            <input type="text" [formControl]="name" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="surname1" class="col-form-label">Primer cognom: </label>
+            <input type="text" [formControl]="surname_1" class="form-control" id="recipient-surname1">
+          </div>
+          <div class="form-group">
+            <label for="surname2" class="col-form-label">Segon cognom: </label>
+            <input type="text" [formControl]="surname_2" class="form-control" id="recipient-surname2">
+          </div>
+          <div class="form-group">
+            <label for="alias" class="col-form-label">Nom d'usuari: </label>
+            <input type="text" [formControl]="alias" class="form-control" id="recipient-alias">
+          </div>
+          <div class="form-group">
+            <label for="birthDate" class="col-form-label">Data de naixement: </label>
+            <input type="date" [formControl]="birth_date" class="form-control" id="recipient-birthdate">
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">Correu electronic: </label>
+            <input type="email" [formControl]="email" class="form-control" id="recipient-email">
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-form-label">Contrasenya: </label>
+            <input type="password" [formControl]="password" class="form-control" id="recipient-password">
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="worker">Introdueix la teva ID de treballador</label>
+            <input type="text" class="form-control" value="" id="recipient-worker" [formControl]="worker"
+              onkeyup="this.value = this.value.toUpperCase();">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
