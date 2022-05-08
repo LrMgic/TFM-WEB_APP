@@ -5,7 +5,7 @@ import { LacervesaComponent } from './Components/lacervesa/lacervesa.component';
 import { LafabricaComponent } from './Components/lafabrica/lafabrica.component';
 import { LempresaComponent } from './Components/lempresa/lempresa.component';
 import { NoticiesComponent } from './Components/noticies/noticies.component';
-import { TasquesComponent } from './Components/tasques/tasques.component';
+import { SeguimentComponent } from './Components/seguiment/seguiment.component';
 import { PortadaRoutingModule } from './portada-routing.module';
 
 @NgModule({
@@ -13,8 +13,8 @@ import { PortadaRoutingModule } from './portada-routing.module';
     NoticiesComponent,
     LempresaComponent,
     LafabricaComponent,
-    TasquesComponent,
     LacervesaComponent,
+    SeguimentComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, PortadaRoutingModule],
 })

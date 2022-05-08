@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root {
+  --text-color: rgb(0, 0, 0);
+  --color1: #FF8A00 ;
+  --color2:#FFAB49;
+  --color3:#FDC889;
+  --color4:#FFF3E5;
+
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: "Alegreya", serif;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+header {
+  min-height: 108px;
+  width: 100vw;
+}
+
+main {
+  min-height: calc(100vh - 190px);
+  z-index: 3;
+  max-width: 100vw;
+}
+
+footer {
+  height: 50px;
+  width: 100vw;
+  text-align: center;
+  z-index: 1;
+  }

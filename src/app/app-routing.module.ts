@@ -1,19 +1,48 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientGuard } from './client/Guards/client.guard';
+import { LacervesaComponent } from './portada/Components/lacervesa/lacervesa.component';
+import { LafabricaComponent } from './portada/Components/lafabrica/lafabrica.component';
+import { LempresaComponent } from './portada/Components/lempresa/lempresa.component';
+import { NavbarComponent } from './portada/Components/navbar/navbar.component';
+import { NoticiesComponent } from './portada/Components/noticies/noticies.component';
+import { SeguimentComponent } from './portada/Components/seguiment/seguiment.component';
 import { TreballadorGuard } from './treballador/Guards/treballador.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'portada/home',
-    pathMatch: 'full',
-  },
-  {
-    path: 'portada',
-    loadChildren: () =>
-      import('./portada/portada.module').then((m) => m.PortadaModule),
-    outlet: 'navbarPortada',
+    component: NavbarComponent,
+    children: [
+      {
+        path: '',
+        component: NoticiesComponent,
+      },
+      {
+        path: 'noticies',
+        component: NoticiesComponent,
+      },
+      {
+        path: 'laEmpresa',
+        component: LempresaComponent,
+      },
+      {
+        path: 'laFabrica',
+        component: LafabricaComponent,
+      },
+      {
+        path: 'laCervesa',
+        component: LacervesaComponent,
+      },
+      {
+        path: 'seguiment',
+        component: SeguimentComponent,
+      },
+      {
+        path: '*',
+        component: NoticiesComponent,
+      },
+    ],
   },
   {
     path: 'client',
@@ -29,11 +58,17 @@ const routes: Routes = [
       ),
     canActivate: [TreballadorGuard],
   },
-  { path: '**', redirectTo: 'portada/home' },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      onSameUrlNavigation: 'ignore',
+      anchorScrolling: 'enabled',
+      scrollPositionRestoration: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

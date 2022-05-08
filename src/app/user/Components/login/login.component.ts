@@ -56,7 +56,12 @@ export class LoginComponent implements OnInit {
     try {
       const authToken = await this.authService.login(this.loginForm.value);
       this.goodClientLogin(authToken);
-      this.goodWorkerLogin(authToken);
+      if(authToken.userrol === 'Treballador') {
+        this.goodWorkerLogin(authToken);
+        this.router.navigateByUrl('treballador');
+      }else{
+        this.router.navigateByUrl('client');
+      }
       this.closeModal();
     } catch (error: any) {
       this.badClientLogin(error);
@@ -73,7 +78,6 @@ export class LoginComponent implements OnInit {
     this.localStorageService.set('alias', authToken.alias);
 
     await this.sharedService.managementToast('loginFeedback', true);
-    this.router.navigateByUrl('portada/home');
 
     this.navbarMenusService.navbarManagement.next({
       showClientSection: true,

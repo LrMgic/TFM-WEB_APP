@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" (scroll)="onscroll()"
+  [ngClass]="navbarfixed?'fixed':'nofixed'">
+  <button class="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarPortada" aria-controls="navbarPortada" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse align-content-center justify-content-around bg-light my-1" id="navbarPortada">
+    <div class="d-flex justify-content-around">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn"
+            routerLink="/noticies">Noticies</button>
+        </li>
+        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonEmpresa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">L'empresa</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonEmpresa">
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa">L'empresa</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="quiSom">Qui
+              som</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa"
+              fragment="eCommers">e-Commers</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="elsPreus">Els
+              preus</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="onSomE">On
+              som</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="perqueUnirse">Per
+              què unir-se</button>
+          </div>
+        </li>
+        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonFabrica" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">La Fabrica</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonFabrica">
+            <button class="dropdown-item btn" type="button" routerLink="/laFabrica">La Fabrica</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laFabrica" fragment="onSomF">On
+              som</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laFabrica" fragment="elProces">Procés
+              de fabricació</button>
+          </div>
+        </li>
+        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonCervesa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">La
+            cervesa</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonCervesa">
+            <button class="dropdown-item btn" type="button" routerLink="/laCervesa">La cervesa</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laCervesa"
+              fragment="cervesesPopulars">Populars</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laCervesa" fragment="repComanda">Repetir
+              comanda</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laCervesa"
+              fragment="receptes">Receptes</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laCervesa"
+              fragment="ingredients">Ingredients</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laCervesa"
+              fragment="col_labora">Col·labora</button>
+          </div>
+        </li>
+        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/seguiment">Seguiment</button></li>
+        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/contacta">Contacta</button></li>
+      </ul>
+    </div>
+    <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+      <input class="form-control mr-sm-2 w-auto" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<router-outlet></router-outlet>

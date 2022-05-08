@@ -48,14 +48,6 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  areaPersonal(): void {
-    this.router.navigateByUrl('client');
-  }
-
-  areaTreball(): void {
-    this.router.navigateByUrl('treballador');
-  }
-
   logout(): void {
     this.localStorageService.remove('user_id');
     this.localStorageService.remove('access_token');
@@ -75,6 +67,6 @@ export class HeaderComponent implements OnInit {
     this.navbarService.navbarManagement.next(navbarInfo);
     this.headerService.headerManagement.next(workerInfo);
 
-    this.router.navigateByUrl('portada/home');
+    this.router.navigateByUrl('');
   }
 }

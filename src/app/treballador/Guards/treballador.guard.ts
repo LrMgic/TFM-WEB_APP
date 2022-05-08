@@ -32,7 +32,7 @@ export class TreballadorGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate(['/portada/home']);
+    this.router.navigate(['']);
 
     return false;
   }

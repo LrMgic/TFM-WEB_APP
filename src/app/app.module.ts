@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './user/Components/footer/footer.component';
 import { HeaderComponent } from './user/Components/header/header.component';
 import { LoginComponent } from './user/Components/login/login.component';
-import { NavbarComponent } from './user/Components/navbar/navbar.component';
+import { NavbarComponent } from './portada/Components/navbar/navbar.component';
 import { RegisterComponent } from './user/Components/register/register.component';
 import { AuthInterceptorService } from './user/Services/auth-interceptor.service';
+import { ContactaComponent } from './user/Components/contacta/contacta.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AuthInterceptorService } from './user/Services/auth-interceptor.service
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
+    ContactaComponent,
   ],
   imports: [
     BrowserModule,
