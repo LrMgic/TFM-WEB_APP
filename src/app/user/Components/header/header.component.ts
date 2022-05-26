@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderMenus } from '../../Models/identification-status.dto';
-import { NavbarMenus } from '../../Models/navbar-menus.dto';
 import { HeaderMenusService } from '../../Services/header-menus.service';
 import { LocalStorageService } from '../../Services/local-storage.service';
-import { NavbarService } from '../../Services/navbar.service';
 
 @Component({
   selector: 'app-header',
@@ -12,38 +10,33 @@ import { NavbarService } from '../../Services/navbar.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  showClientSection: boolean;
-  showNoClientSection: boolean;
+  showNoIdentifieSection: boolean;
   showWorkerSection: boolean;
-  showNoWorkerSection: boolean;
+  showClientSection: boolean;
 
   alias: string | null;
+  private userrol: string | null;
 
   constructor(
     private router: Router,
-    private navbarService: NavbarService,
     private headerService: HeaderMenusService,
     private localStorageService: LocalStorageService
   ) {
-    this.showClientSection = false;
-    this.showNoClientSection = true;
+    this.showNoIdentifieSection = true;
     this.showWorkerSection = false;
-    this.showNoWorkerSection = true;
+    this.showClientSection = false;
     this.alias = '';
+    this.userrol = '';
   }
 
   ngOnInit(): void {
-    this.navbarService.navbarManagement.subscribe((navbarInfo: NavbarMenus) => {
-      if (navbarInfo) {
-        this.showClientSection = navbarInfo.showClientSection;
-        this.showNoClientSection = navbarInfo.showNoClientSection;
-        this.alias = this.localStorageService.get('alias');
-      }
-    });
     this.headerService.headerManagement.subscribe((headerInfo: HeaderMenus) => {
       if (headerInfo) {
+        this.alias = this.localStorageService.get('alias');
+        this.userrol = this.localStorageService.get('userrol');
+        this.showNoIdentifieSection = headerInfo.showNoIdentifieSection;
+        this.showClientSection = headerInfo.showClientSection;
         this.showWorkerSection = headerInfo.showWorkerSection;
-        this.showNoWorkerSection = headerInfo.showNoWorkerSection;
       }
     });
   }
@@ -54,17 +47,12 @@ export class HeaderComponent implements OnInit {
     this.localStorageService.remove('userrol');
     this.localStorageService.remove('alias');
 
-    const navbarInfo: NavbarMenus = {
-      showClientSection: false,
-      showNoClientSection: true,
-    };
-
     const workerInfo: HeaderMenus = {
+      showNoIdentifieSection: true,
       showWorkerSection: false,
-      showNoWorkerSection: true,
+      showClientSection: false,
     };
 
-    this.navbarService.navbarManagement.next(navbarInfo);
     this.headerService.headerManagement.next(workerInfo);
 
     this.router.navigateByUrl('');

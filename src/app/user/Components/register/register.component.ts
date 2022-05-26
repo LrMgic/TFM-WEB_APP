@@ -8,9 +8,9 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserDTO } from 'src/app/user/Models/user.dto';
-import { NavbarService } from 'src/app/user/Services/navbar.service';
 import { SharedService } from 'src/app/user/Services/shared.service';
 import { UserService } from 'src/app/user/Services/user.service';
+import { HeaderMenusService } from '../../Services/header-menus.service';
 
 @Component({
   selector: 'app-register',
@@ -35,10 +35,10 @@ export class RegisterComponent implements OnInit {
   isValidForm: boolean | null;
 
   constructor(
+    private headerMenusService: HeaderMenusService,
     private formBuilder: FormBuilder,
     private userService: UserService,
     private sharedService: SharedService,
-    private navbarMenusService: NavbarService,
     private router: Router
   ) {
     this.registerUser = new UserDTO(
@@ -153,9 +153,10 @@ export class RegisterComponent implements OnInit {
   }
 
   private async badEnd(error: any): Promise<void> {
-    this.navbarMenusService.navbarManagement.next({
+    this.headerMenusService.headerManagement.next({
+      showNoIdentifieSection: true,
       showClientSection: false,
-      showNoClientSection: true,
+      showWorkerSection: false,
     });
     await this.sharedService.errorLog(error.error);
     await this.sharedService.managementToast(

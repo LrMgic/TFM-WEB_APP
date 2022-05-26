@@ -1,0 +1,88 @@
+<div *ngIf="user.errors">
+  <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+    *ngIf="user.errors && (user.touched || user.dirty)">
+    <span *ngIf="user.errors.required">És necessari introduir un nom de contacte.</span>
+    <span *ngIf="user.errors.minlength">El nom ha de tenir com a minim 5 caracters.</span>
+    <span *ngIf="user.errors.maxlength">El nom ha de tenir com a maxim 25 caracters.</span>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    </button>
+  </span>
+</div>
+<div *ngIf="subject.errors">
+  <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+    *ngIf="user.errors && (subject.touched || subject.dirty)">
+    <span *ngIf="subject.errors.required">És necessari introduir un asunte.</span>
+    <span *ngIf="subject.errors.minlength">L'asunte ha de tenir com a minim 5 caracters.</span>
+    <span *ngIf="subject.errors.maxlength">L'asunte ha de tenir com a maxim 55 caracters.</span>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    </button>
+  </span>
+</div>
+<div *ngIf="description.errors">
+  <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+    *ngIf="description.errors && (description.touched || description.dirty)">
+    <span *ngIf="description.errors.required">És missatge introduir un nom de contacte.</span>
+    <span *ngIf="description.errors.maxlength">El missatge ha de tenir com a maxim 555 caracters.</span>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    </button>
+  </span>
+</div>
+<div *ngIf="methodValue.errors">
+  <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+    *ngIf="methodValue.errors && (methodValue.touched || methodValue.dirty)">
+    <span *ngIf="methodValue.errors.required">És nesesari introduir el número de telefon o direcció de correu electronic.</span>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    </button>
+  </span>
+</div>
+<div class="d-flex flex-column p-md-3">
+  <section class="p-2 bg-white">
+    <header class="text-center">
+      <h2>Contacta amb nosaltres</h2>
+    </header>
+    <main>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam incidunt, nemo consequuntur tenetur beatae
+        quidem quasi officia tempora. Eligendi explicabo totam sit id aliquid aspernatur possimus corporis nobis ea
+        aliquam!</p>
+    </main>
+  </section>
+  <section class="p-2 bg-white d-flex justify-content-around flex-wrap">
+    <form [formGroup]="contactForm" (ngSubmit)="saveContact()">
+      <div class="modal-body d-flex flex-column" style="min-width: 50vw;">
+        <div class="form-group m-2">
+          <label for="user" class="col-form-label">Nom: </label>
+          <input *ngIf="showNoIdentifieSection" type="text" [formControl]="user" class="form-control" id="recipient-user" placeholder="Nom del contacte">
+          <p *ngIf="showClientSection">{{alias}}</p>
+        </div>
+        <div class="form-group m-2">
+          <label for="subject" class="col-form-label">Asunte: </label>
+          <input type="subject" [formControl]="subject" class="form-control" id="recipient-subject" placeholder="Breu descripció de l'asunte">
+        </div>
+        <div class="form-group m-2">
+          <label for="description" class="col-form-label">Missatge: </label>
+          <textarea type="description" [formControl]="description" class="form-control" id="recipient-description" rows="3"
+            placeholder="Desenvolupa el teu cas"></textarea>
+        </div>
+        <div class="form-group m-2">
+          <label for="contact_method" class="col-form-label">Metode de contacte: </label>
+          <div class="d-flex flex-column flex-sm-row">
+            <select [formControl]="method" class="col-form-label">
+              <option value="" disabled>Escull</option>
+              <option value="Tel" selected>Telefon</option>
+              <option value="What">Missatge de whatsapp</option>
+              <option value="email">Per email</option>
+            </select>
+            <input *ngIf="method.value" type="methodValue" [formControl]="methodValue" class="form-control" id="recipient-methodValue" style="min-width: 250px;">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Buscar</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<!-- <div class="form-group m-2">
+  <mdb-checkbox [default]="true" class="mb-4">Enviarme una copa del missatge</mdb-checkbox>
+</div> -->

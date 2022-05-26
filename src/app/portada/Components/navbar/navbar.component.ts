@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NavbarMenus } from 'src/app/user/Models/navbar-menus.dto';
-import { NavbarService } from 'src/app/user/Services/navbar.service';
+import { HeaderMenus } from 'src/app/user/Models/identification-status.dto';
+import { HeaderMenusService } from 'src/app/user/Services/header-menus.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +8,9 @@ import { NavbarService } from 'src/app/user/Services/navbar.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  showClientSection: boolean;
-  showNoClientSection: boolean;
+  showNoIdentifieSection: boolean;
   showWorkerSection: boolean;
-  showNoWorkerSection: boolean;
+  showClientSection: boolean;
   navbarfixed: boolean = false;
 
   @HostListener('window:scroll', ['$event']) onscroll() {
@@ -22,19 +21,23 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  constructor(private navbarService: NavbarService) {
-    this.showClientSection = false;
-    this.showNoClientSection = true;
+  constructor(private headerService: HeaderMenusService) {
+    this.showNoIdentifieSection = true;
     this.showWorkerSection = false;
-    this.showNoWorkerSection = true;
+    this.showClientSection = false;
   }
 
   ngOnInit(): void {
-    this.navbarService.navbarManagement.subscribe((navbarInfo: NavbarMenus) => {
-      if (navbarInfo) {
-        this.showClientSection = navbarInfo.showClientSection;
-        this.showNoClientSection = navbarInfo.showNoClientSection;
+    this.headerService.headerManagement.subscribe((headerInfo: HeaderMenus) => {
+      if (headerInfo) {
+        this.showNoIdentifieSection = headerInfo.showNoIdentifieSection;
+        this.showClientSection = headerInfo.showClientSection;
+        this.showWorkerSection = headerInfo.showWorkerSection;
       }
     });
+  }
+
+  onActivate() {
+    window.scrollTo(0, 0);
   }
 }

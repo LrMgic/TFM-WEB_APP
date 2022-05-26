@@ -12,22 +12,22 @@
         </li>
         <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonEmpresa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">L'empresa</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonEmpresa">
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa">L'empresa</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="quiSom">Qui
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" onclick="onActivate()">L'empresa</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="headingQuiSom">Qui
               som</button>
             <button class="dropdown-item btn" type="button" routerLink="/laEmpresa"
-              fragment="eCommers">e-Commers</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="elsPreus">Els
+              fragment="heading_eCommers">e-Commers</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="headingElsPreus">Els
               preus</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="onSomE">On
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="headingOnSomE">On
               som</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="perqueUnirse">Per
+            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="headingPerqueUnirse">Per
               què unir-se</button>
           </div>
         </li>
         <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonFabrica" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">La Fabrica</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonFabrica">
-            <button class="dropdown-item btn" type="button" routerLink="/laFabrica">La Fabrica</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laFabrica" onclick="onActivate()">La Fabrica</button>
             <button class="dropdown-item btn" type="button" routerLink="/laFabrica" fragment="onSomF">On
               som</button>
             <button class="dropdown-item btn" type="button" routerLink="/laFabrica" fragment="elProces">Procés
@@ -37,21 +37,19 @@
         <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonCervesa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">La
             cervesa</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonCervesa">
-            <button class="dropdown-item btn" type="button" routerLink="/laCervesa">La cervesa</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laCervesa" onclick="onActivate()">La cervesa</button>
             <button class="dropdown-item btn" type="button" routerLink="/laCervesa"
-              fragment="cervesesPopulars">Populars</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laCervesa" fragment="repComanda">Repetir
+              fragment="headingPopular">Populars</button>
+            <button class="dropdown-item btn" type="button" routerLink="/laCervesa" fragment="headingRepetir">Repetir
               comanda</button>
             <button class="dropdown-item btn" type="button" routerLink="/laCervesa"
-              fragment="receptes">Receptes</button>
+              fragment="headingReceptes">Receptes</button>
             <button class="dropdown-item btn" type="button" routerLink="/laCervesa"
-              fragment="ingredients">Ingredients</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laCervesa"
-              fragment="col_labora">Col·labora</button>
+              fragment="headingIngredients">Ingredients</button>
           </div>
         </li>
-        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/seguiment">Seguiment</button></li>
-        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/contacta">Contacta</button></li>
+        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/seguiment" onclick="onActivate()">Seguiment</button></li>
+        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/contacta" onclick="onActivate()">Contacta</button></li>
       </ul>
     </div>
     <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">

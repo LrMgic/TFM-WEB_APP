@@ -10,48 +10,21 @@
     </main>
   </section>
   <section class="p-3 d-flex justify-content-around flex-wrap">
-    <div class="card m-2" style="width: 20vw; min-width: 300px;">
-      <img src="https://media.istockphoto.com/photos/pouring-beer-with-bubble-froth-in-glass-for-background-on-front-view-picture-id937833412?k=20&m=937833412&s=612x612&w=0&h=NrT5gL91dpiS01wavn9LdkNtpLvrJ-Rk3w3nzdGoKUU=" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Noticia 1</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.</p>
-        <a href="#" class="btn btn-primary">Saber més</a>
-      </div>
-    </div>
-
-    <div class="card m-2" style="width: 20vw; min-width: 300px;">
-      <img src="https://media.istockphoto.com/photos/pouring-beer-with-bubble-froth-in-glass-for-background-on-front-view-picture-id937833412?k=20&m=937833412&s=612x612&w=0&h=NrT5gL91dpiS01wavn9LdkNtpLvrJ-Rk3w3nzdGoKUU=" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Noticia 2</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.</p>
-        <a href="#" class="btn btn-primary">Saber més</a>
-      </div>
-    </div>
-
-    <div class="card m-2" style="width: 20vw; min-width: 300px;">
-      <img src="https://media.istockphoto.com/photos/pouring-beer-with-bubble-froth-in-glass-for-background-on-front-view-picture-id937833412?k=20&m=937833412&s=612x612&w=0&h=NrT5gL91dpiS01wavn9LdkNtpLvrJ-Rk3w3nzdGoKUU=" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Noticia 3</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.</p>
-        <a href="#" class="btn btn-primary">Saber més</a>
-      </div>
-    </div>
-
-    <div class="card m-2" style="width: 20vw; min-width: 300px;">
-      <img src="https://media.istockphoto.com/photos/pouring-beer-with-bubble-froth-in-glass-for-background-on-front-view-picture-id937833412?k=20&m=937833412&s=612x612&w=0&h=NrT5gL91dpiS01wavn9LdkNtpLvrJ-Rk3w3nzdGoKUU=" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Noticia 4</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.</p>
-        <a href="#" class="btn btn-primary">Saber més</a>
-      </div>
-    </div>
-
-    <div class="card m-2" style="width: 20vw; min-width: 300px;">
-      <img src="https://media.istockphoto.com/photos/pouring-beer-with-bubble-froth-in-glass-for-background-on-front-view-picture-id937833412?k=20&m=937833412&s=612x612&w=0&h=NrT5gL91dpiS01wavn9LdkNtpLvrJ-Rk3w3nzdGoKUU=" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Noticia 5</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.</p>
-        <a href="#" class="btn btn-primary">Saber més</a>
+    <div *ngFor="let post of posts; index as i; first as isFirst" class="card">
+      <div class="card m-2" style="width: 20vw; min-width: 400px;">
+        <!-- <img
+          src={{post.img}}
+          class="card-img-top" alt="..."> -->
+        <img
+          src="https://media.istockphoto.com/photos/pouring-beer-with-bubble-froth-in-glass-for-background-on-front-view-picture-id937833412?k=20&m=937833412&s=612x612&w=0&h=NrT5gL91dpiS01wavn9LdkNtpLvrJ-Rk3w3nzdGoKUU="
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">{{ post.title }}</h3>
+          <p>Data de publicació: {{ post.publication_date}}</p>
+          <p class="card-text texthiden">{{ post.description }}</p>
+          <p>Paraules clau: {{ post.tags }}</p>
+          <app-noticia-extens [postExtend]="post"></app-noticia-extens>
+        </div>
       </div>
     </div>
   </section>

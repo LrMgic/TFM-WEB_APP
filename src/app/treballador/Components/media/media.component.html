@@ -1,0 +1,78 @@
+<div class="position-absolute w-100" style="z-index: 1;">
+  <p id="postFeedback" class="m-1"></p>
+  <div *ngIf="title.errors" class="m-1">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="title.errors && (title.touched || title.dirty)">
+      <span *ngIf="title.errors.required">És necessari introduir un títol </span>
+      <span *ngIf="title.errors.minlength">
+        El títol ha de tenir com a mínim 5 caràcters.
+      </span>
+      <span *ngIf="title.errors.maxlength">
+        El títol ha de tenir com a màxom 55 caràcters.
+      </span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="description.errors" class="m-1">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="description.errors && (description.touched || description.dirty)">
+      <span *ngIf="description.errors.required">És necessari omplir la notícia</span>
+      <span *ngIf="description.errors.minlength">
+        La notícia ha de tenir com a mínim 5 caràcters.
+      </span>
+      <span *ngIf="description.errors.maxlength">
+        La notícia ha de tenir com a màxom 555 caràcters.
+      </span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+
+  <div *ngIf="tags.errors" class="m-1">
+    <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+      *ngIf="tags.errors && (tags.touched || tags.dirty)">
+      <span *ngIf="tags.errors.required">És necessari introduir al menys un element</span>
+      <span *ngIf="tags.errors.minlength">
+        La llista de tags han de tenir com a mínim 5 caràcters.
+      </span>
+      <span *ngIf="tags.errors.maxlength">
+        La llista de tags han de tenir com a màxom 25 caràcters.
+      </span>
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+      </button>
+    </span>
+  </div>
+</div>
+<div class="d-flex flex-column p-md-3">
+  <section class="p-3 bg-white my-1">
+    <h2 class="text-center text-uppercase">Redactar nova notícia</h2>
+  </section>
+  <section class="p-3 bg-white my-1">
+    <div class="my-1 w-75 justify-content-center">
+      <form [formGroup]="postForm" (ngSubmit)="savePost()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="title" class="col-form-label">Títol: </label>
+            <input type="text" [formControl]="title" class="form-control" id="recipient-title">
+          </div>
+          <div class="form-group">
+            <label for="description" class="col-form-label">Noticia: </label>
+            <textarea type="text" [formControl]="description" class="form-control" id="recipient-description"
+              rows="4"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="tags" class="col-form-label">Tags: </label>
+            <input type="text" [formControl]="tags" class="form-control" id="recipient-tags">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!postForm.valid">Publicar</button>
+        </div>
+      </form>
+    </div>
+
+  </section>
+</div>

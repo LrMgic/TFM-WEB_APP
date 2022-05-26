@@ -7,12 +7,12 @@
     <div *ngIf="name.errors" class="m-2">
       <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
         *ngIf="name.errors && (name.touched || name.dirty)">
-        <span *ngIf="name.errors.required">Es necesari introduir un nom</span>
+        <span *ngIf="name.errors.required">És necessari introduir un nom</span>
         <span *ngIf="name.errors.minlength">
-          El nom ha de tenir com a minim 5 caracters.
+          El nom ha de tenir com a mínim 5 caràcters.
         </span>
         <span *ngIf="name.errors.maxlength">
-          El nom ha de tenir com a màxom 25 caracters.
+          El nom ha de tenir com a màxom 25 caràcters.
         </span>
         <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
         </button>
@@ -22,12 +22,12 @@
     <div *ngIf="surname_1.errors" class="m-2">
       <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
         *ngIf="surname_1.errors && (surname_1.touched || surname_1.dirty)">
-        <span *ngIf="surname_1.errors.required">Es necesari introduir un cognom</span>
+        <span *ngIf="surname_1.errors.required">És necessari introduir un cognom</span>
         <span *ngIf="surname_1.errors.minlength">
-          El primer cognom ha de tenir com a minim 5 caracters.
+          El primer cognom ha de tenir com a mínim 5 caràcters.
         </span>
         <span *ngIf="surname_1.errors.maxlength">
-          El primer cognom ha de tenir com a màxom 25 caracters.
+          El primer cognom ha de tenir com a màxom 25 caràcters.
         </span>
         <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
         </button>
@@ -38,10 +38,10 @@
       <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
         *ngIf="surname_2.errors && (surname_2.touched || surname_2.dirty)">
         <span *ngIf="surname_2.errors.minlength">
-          El segon cognom ha de tenir com a minim 5 caracters.
+          El segon cognom ha de tenir com a mínim 5 caràcters.
         </span>
         <span *ngIf="surname_2.errors.maxlength">
-          El segon cognom ha de tenir com a màxom 25 caracters.
+          El segon cognom ha de tenir com a màxom 25 caràcters.
         </span>
         <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
         </button>
@@ -51,12 +51,12 @@
     <div *ngIf="alias.errors" class="m-2">
       <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
         *ngIf="alias.errors && (alias.touched || alias.dirty)">
-        <span *ngIf="alias.errors.required">Es necesari introduir un sobrenom</span>
+        <span *ngIf="alias.errors.required">És necessari introduir un sobrenom</span>
         <span *ngIf="alias.errors.minlength">
-          El sobrenom ha de tenir minim 5 caracters.
+          El sobrenom ha de tenir mínim 5 caràcters.
         </span>
         <span *ngIf="alias.errors.maxlength">
-          El sobrenom ha de tenir com a màxom 25 caracters.
+          El sobrenom ha de tenir com a màxom 25 caràcters.
         </span>
         <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
         </button>
@@ -66,7 +66,7 @@
     <div *ngIf="birth_date.errors" class="m-2">
       <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
         *ngIf="birth_date.errors && (birth_date.touched || birth_date.dirty)">
-        <span *ngIf="birth_date.errors.required">Es necesari introduir la data de naixement</span>
+        <span *ngIf="birth_date.errors.required">És necessari introduir la data de naixement</span>
         <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
         </button>
       </span>
@@ -75,7 +75,7 @@
     <div *ngIf="email.errors" class="m-2">
       <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
         *ngIf="email.errors && (email.touched || email.dirty)">
-        <span *ngIf="email.errors.required">Es necesari introduir un correu electronic</span>
+        <span *ngIf="email.errors.required">És necessari introduir un correu electronic</span>
         <span *ngIf="email.errors.pattern">El format del correu electronic no es correcte.</span>
         <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
         </button>
@@ -87,7 +87,7 @@
         *ngIf="password.errors && (password.touched || password.dirty)">
         <span *ngIf="password.errors.required">Es necesari una contrasenya</span>
         <span *ngIf="password.errors.minlength">
-          La contrasenya ha de tenir al menys 8 caracters.
+          La contrasenya ha de tenir al menys 8 caràcters.
         </span>
         <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
         </button>
@@ -97,7 +97,8 @@
     <div *ngIf="worker.errors" class="m-2">
       <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
         *ngIf="worker.errors && (worker.touched || worker.dirty)">
-        <span *ngIf="worker.errors.pattern">El número de treballador no es correcte (quatre caracters i cinc digits).</span>
+        <span *ngIf="worker.errors.pattern">El número de treballador no es correcte (quatre caràcters i cinc
+          digits).</span>
         <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
         </button>
       </span>

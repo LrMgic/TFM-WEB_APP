@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientGuard } from './client/Guards/client.guard';
+import { ContactaComponent } from './portada/Components/contacta/contacta.component';
 import { LacervesaComponent } from './portada/Components/lacervesa/lacervesa.component';
 import { LafabricaComponent } from './portada/Components/lafabrica/lafabrica.component';
 import { LempresaComponent } from './portada/Components/lempresa/lempresa.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: 'seguiment',
         component: SeguimentComponent,
+      },
+      {
+        path: 'contacta',
+        component: ContactaComponent,
       },
       {
         path: '*',

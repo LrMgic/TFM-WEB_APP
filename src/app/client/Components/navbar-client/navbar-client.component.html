@@ -10,23 +10,29 @@
         <li class="nav-item" routerLinkActive="active"><button type="button" class="btn"
           routerLink="/client" style="font-size: 1.2rem; font-weight: bold;">Espai personal</button>
       </li>
-        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonFabrica" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Economia</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonFabrica">
-            <button class="dropdown-item btn" type="button" routerLink="/client/">Produccións</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laFabrica" fragment="onSomF">Inversions</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laFabrica" fragment="elProces">Altres</button>
+        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonEconomia" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Economia</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonEconomia">
+            <button class="dropdown-item btn" type="button" routerLink="/client/economiaClient">Produccións</button>
+            <button class="dropdown-item btn" type="button" routerLink="/client/economiaClient" fragment="headingInversions">Inversions</button>
+            <button class="dropdown-item btn" type="button" routerLink="/client/economiaClient" fragment="headingAltres">Altres</button>
           </div>
         </li>
-        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonEmpresa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuració personal</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonEmpresa">
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa">Dades personals</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="quiSom">Dades bancaries</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa"
-              fragment="eCommers">Les meves direccións</button>
+        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonPersonalClient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuració personal</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonPersonalClient">
+            <button class="dropdown-item btn" type="button" routerLink="/client/espaiPersonal">Dades personals</button>
+            <button class="dropdown-item btn" type="button" routerLink="/client/espaiPersonal" fragment="headingBanc">Dades bancaries</button>
+            <button class="dropdown-item btn" type="button" routerLink="/client/espaiPersonal"
+              fragment="headingDireccions">Les meves direccións</button>
           </div>
         </li>
-        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/seguiment">Seguiment</button></li>
-        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/contacta">Contacta</button></li>
+        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonContribucioClient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contribucions</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonContribucioClient">
+            <button class="dropdown-item btn" type="button" routerLink="/client/espaiClient">Puntuacions</button>
+            <button class="dropdown-item btn" type="button" routerLink="/client/espaiClient" fragment="headingBanc">Comentaris</button>
+          </div>
+        </li>
+        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/client/seguiment">Seguiment</button></li>
+        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/client/contacta">Contacta</button></li>
       </ul>
     </div>
     <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">

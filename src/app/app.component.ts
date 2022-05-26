@@ -3,7 +3,6 @@ import { HeaderMenus } from './user/Models/identification-status.dto';
 import { NavbarMenus } from './user/Models/navbar-menus.dto';
 import { HeaderMenusService } from './user/Services/header-menus.service';
 import { LocalStorageService } from './user/Services/local-storage.service';
-import { NavbarService } from './user/Services/navbar.service';
 
 @Component({
   selector: 'app-root',
@@ -13,22 +12,19 @@ import { NavbarService } from './user/Services/navbar.service';
 export class AppComponent {
   title = 'TFM-WEB_APP';
 
-  showClientSection: boolean;
-  showNoClientSection: boolean;
+  showNoIdentifieSection: boolean;
   showWorkerSection: boolean;
-  showNoWorkerSection: boolean;
+  showClientSection: boolean;
 
   alias: string | null;
 
   constructor(
-    private navbarService: NavbarService,
     private headerService: HeaderMenusService,
     private localStorageService: LocalStorageService
   ) {
-    this.showClientSection = false;
-    this.showNoClientSection = true;
+    this.showNoIdentifieSection = true;
     this.showWorkerSection = false;
-    this.showNoWorkerSection = true;
+    this.showClientSection = false;
     this.alias = '';
   }
 
@@ -38,17 +34,12 @@ export class AppComponent {
     this.localStorageService.remove('userrol');
     this.localStorageService.remove('alias');
 
-    const navbarInfo: NavbarMenus = {
-      showClientSection: false,
-      showNoClientSection: true,
-    };
-
     const workerInfo: HeaderMenus = {
+      showNoIdentifieSection: true,
       showWorkerSection: false,
-      showNoWorkerSection: true,
+      showClientSection: false,
     };
 
-    this.navbarService.navbarManagement.next(navbarInfo);
     this.headerService.headerManagement.next(workerInfo);
   }
 }

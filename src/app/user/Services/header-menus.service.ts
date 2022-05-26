@@ -8,7 +8,8 @@ import { HeaderMenus } from '../Models/identification-status.dto';
 export class HeaderMenusService {
   headerManagement: BehaviorSubject<HeaderMenus> =
     new BehaviorSubject<HeaderMenus>({
+      showNoIdentifieSection: true,
       showWorkerSection: false,
-      showNoWorkerSection: true,
+      showClientSection: false,
     });
 }

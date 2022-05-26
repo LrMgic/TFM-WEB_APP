@@ -8,8 +8,8 @@
 
     </div>
     <div class="d-flex justify-content-around align-content-around flex-wrap">
-      <app-login *ngIf="showNoClientSection"></app-login>
-      <app-register *ngIf="showNoClientSection"></app-register>
+      <app-login *ngIf="showNoIdentifieSection"></app-login>
+      <app-register *ngIf="showNoIdentifieSection"></app-register>
       <button type="button" class="btn btn-primary dropdown-toggle mx-1" id="dropdownMenuButtonFabrica" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false" *ngIf="showClientSection">{{ alias }}</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonFabrica" *ngIf="showClientSection">

@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/user/Services/auth.service';
 import { HeaderMenusService } from 'src/app/user/Services/header-menus.service';
 import { LocalStorageService } from 'src/app/user/Services/local-storage.service';
-import { NavbarService } from 'src/app/user/Services/navbar.service';
 import { SharedService } from 'src/app/user/Services/shared.service';
 
 @Component({
@@ -28,7 +27,6 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private sharedService: SharedService,
-    private navbarMenusService: NavbarService,
     private headerMenusService: HeaderMenusService,
     private localStorageService: LocalStorageService,
     private router: Router
@@ -55,16 +53,10 @@ export class LoginComponent implements OnInit {
   async login(): Promise<void> {
     try {
       const authToken = await this.authService.login(this.loginForm.value);
-      this.goodClientLogin(authToken);
-      if(authToken.userrol === 'Treballador') {
-        this.goodWorkerLogin(authToken);
-        this.router.navigateByUrl('treballador');
-      }else{
-        this.router.navigateByUrl('client');
-      }
+      this.goodLogin(authToken);
       this.closeModal();
     } catch (error: any) {
-      this.badClientLogin(error);
+      this.badLogin(error);
     }
   }
 
@@ -72,33 +64,36 @@ export class LoginComponent implements OnInit {
     this.closeBtn.nativeElement.click();
   }
 
-  private async goodClientLogin(authToken: any): Promise<void> {
+  private async goodLogin(authToken: any): Promise<void> {
     this.localStorageService.set('user_id', authToken.user_id);
     this.localStorageService.set('access_token', authToken.access_token);
     this.localStorageService.set('alias', authToken.alias);
-
-    await this.sharedService.managementToast('loginFeedback', true);
-
-    this.navbarMenusService.navbarManagement.next({
-      showClientSection: true,
-      showNoClientSection: false,
-    });
-  }
-
-  private async goodWorkerLogin(authToken: any): Promise<void> {
     this.localStorageService.set('userrol', authToken.userrol);
 
     await this.sharedService.managementToast('loginFeedback', true);
-    this.headerMenusService.headerManagement.next({
-      showWorkerSection: true,
-      showNoWorkerSection: false,
-    });
+
+    if (authToken.userrol === 'Treballador') {
+      this.headerMenusService.headerManagement.next({
+        showNoIdentifieSection: false,
+        showClientSection: true,
+        showWorkerSection: true,
+      });
+      this.router.navigateByUrl('treballador');
+    } else {
+      this.headerMenusService.headerManagement.next({
+        showNoIdentifieSection: false,
+        showClientSection: true,
+        showWorkerSection: false,
+      });
+      this.router.navigateByUrl('client');
+    }
   }
 
-  private async badClientLogin(error: any): Promise<void> {
-    this.navbarMenusService.navbarManagement.next({
+  private async badLogin(error: any): Promise<void> {
+    this.headerMenusService.headerManagement.next({
+      showNoIdentifieSection: true,
       showClientSection: false,
-      showNoClientSection: true,
+      showWorkerSection: false,
     });
     await this.sharedService.errorLog(error.error);
     await this.sharedService.managementToast(

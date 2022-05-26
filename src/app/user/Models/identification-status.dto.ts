@@ -1,4 +1,5 @@
 export interface HeaderMenus {
-  showNoWorkerSection: boolean;
+  showNoIdentifieSection: boolean;
   showWorkerSection: boolean;
+  showClientSection: boolean;
 }

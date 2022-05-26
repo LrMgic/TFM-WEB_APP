@@ -1,32 +1,45 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" (scroll)="onscroll()"
   [ngClass]="navbarfixed?'fixed':'nofixed'">
-  <button class="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarPortada" aria-controls="navbarPortada" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarPortada"
+    aria-controls="navbarPortada" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse align-content-center justify-content-around bg-light my-1" id="navbarPortada">
     <div class="d-flex justify-content-around align-content-center">
       <ul class="navbar-nav mr-auto align-content-center">
+        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/treballador"
+            style="font-size: 1.2rem; font-weight: bold;">Portal Treballador</button>
+        </li>
         <li class="nav-item" routerLinkActive="active"><button type="button" class="btn"
-          routerLink="/treballador" style="font-size: 1.2rem; font-weight: bold;">Portal Treballador</button>
-      </li>
-        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonFabrica" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Producció</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonFabrica">
-            <button class="dropdown-item btn" type="button" routerLink="/client/">Produccións</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laFabrica" fragment="onSomF">Inversions</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laFabrica" fragment="elProces">Altres</button>
+            routerLink="/treballador/produccio">Producció</button>
+        </li>
+        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle"
+            id="dropdownMenuButtonMedia" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Media</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonMedia">
+            <button class="dropdown-item btn" type="button" routerLink="/treballador/media">Noticies</button>
+            <button class="dropdown-item btn" type="button" routerLink="/treballador/media"
+              fragment="headingAnuncis">Anuncis</button>
+            <button class="dropdown-item btn" type="button" routerLink="/treballador/media"
+              fragment="headingControl">Control
+              contribucions client</button>
           </div>
         </li>
-        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle" id="dropdownMenuButtonEmpresa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuració personal</button>
+        <li class="nav-item dropdown" routerLinkActive="active"><button type="button" class="btn dropdown-toggle"
+            id="dropdownMenuButtonEmpresa" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Configuració personal</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonEmpresa">
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa">Dades personals</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa" fragment="quiSom">Dades bancaries</button>
-            <button class="dropdown-item btn" type="button" routerLink="/laEmpresa"
-              fragment="eCommers">Les meves direccións</button>
+            <button class="dropdown-item btn" type="button" routerLink="/treballador/laEmpresa">Dades personals</button>
+            <button class="dropdown-item btn" type="button" routerLink="/treballador/laEmpresa" fragment="quiSom">Dades
+              bancaries</button>
+            <button class="dropdown-item btn" type="button" routerLink="/treballador/laEmpresa" fragment="eCommers">Les
+              meves
+              direccións</button>
           </div>
         </li>
-        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/seguiment">Seguiment</button></li>
-        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn" routerLink="/contacta">Contacta</button></li>
+        <li class="nav-item" routerLinkActive="active"><button type="button" class="btn"
+            routerLink="/contacta">Contacta</button></li>
       </ul>
     </div>
     <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">

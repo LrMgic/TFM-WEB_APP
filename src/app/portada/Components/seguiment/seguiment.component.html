@@ -1,1 +1,76 @@
-<p>seguiment works!</p>
+<div *ngIf="order_id.errors">
+  <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+    *ngIf="order_id.errors && (order_id.touched || order_id.dirty)">
+    <span *ngIf="order_id.errors.required">És necessari introduir la ID</span>
+    <span *ngIf="order_id.errors.pattern">El format de la ID no es correcte.</span>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    </button>
+  </span>
+</div>
+<div *ngIf="email.errors">
+  <span class="alert alert-danger d-flex align-items-center justify-content-between" role="alert"
+    *ngIf="email.errors && (email.touched || email.dirty)">
+    <span *ngIf="email.errors.required">És necessari introduir un correu electronic</span>
+    <span *ngIf="email.errors.pattern">El format del correu electronic no es correcte.</span>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    </button>
+  </span>
+</div>
+<div class="d-flex flex-column p-md-3">
+  <section class="p-2 bg-white">
+    <header class="text-center">
+      <h2>Seguiment de comandes</h2>
+    </header>
+    <main>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam incidunt, nemo consequuntur tenetur beatae
+        quidem quasi officia tempora. Eligendi explicabo totam sit id aliquid aspernatur possimus corporis nobis ea
+        aliquam!</p>
+    </main>
+  </section>
+  <section class="p-2 bg-white d-flex justify-content-around flex-wrap">
+    <form [formGroup]="serchForm" (ngSubmit)="saveOrder()">
+      <div class="modal-body d-flex">
+        <div class="form-group m-2">
+          <label for="order_id" class="col-form-label">ID: </label>
+          <input type="text" [formControl]="order_id" class="form-control" id="recipient-order_id">
+        </div>
+        <div class="form-group m-2">
+          <label for="email" class="col-form-label">Correu electronic: </label>
+          <input type="email" [formControl]="email" class="form-control" id="recipient-email">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="!serchForm.valid">Buscar</button>
+      </div>
+    </form>
+  </section>
+  <section class="p-2 d-flex justify-content-around flex-wrap" *ngIf="showSerchSection">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" rowspan="2">#</th>
+          <th scope="col" rowspan="2">ID</th>
+          <th scope="col" rowspan="2">Nom comanda</th>
+          <th scope="col" colspan="2">Producció</th>
+          <th scope="col" colspan="2">Entrega</th>
+          <th scope="col" colspan="2">Estat</th>
+        </tr>
+        <tr>
+          <th scope="col">Estat</th>
+          <th scope="col">Finalització</th>
+          <th scope="col">Estat</th>
+          <th scope="col">Finalització</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let oder of shareOrderList; index as i; first as isFirst">
+        <tr>
+          <th scope="row">{{i}}</th>
+          <td>{{ oder.order_id }}</td>
+          <td>{{ oder.order_name }}</td>
+          <td>{{ oder.progres }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <app-seguiment-llista *ngIf="showClientSection"></app-seguiment-llista>
+</div>

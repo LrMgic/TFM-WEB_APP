@@ -1,0 +1,34 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Saber més
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" style="min-width: 75vw;" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title text-center mx-5" id="exampleModalLabel">{{postExtend.title}}</h2>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" #closeBtn>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="p-2 m-5">
+          <p>Data de publicació: {{ postExtend.publication_date}}</p>
+          <p>Paraules clau: {{ postExtend.tags }}</p>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <!-- <img
+    src={{post.img}}
+    class="card-img-top" alt="..."> -->
+          <img
+            src="https://media.istockphoto.com/photos/pouring-beer-with-bubble-froth-in-glass-for-background-on-front-view-picture-id937833412?k=20&m=937833412&s=612x612&w=0&h=NrT5gL91dpiS01wavn9LdkNtpLvrJ-Rk3w3nzdGoKUU="
+            class="card-img-top p-1" style="max-height: 50vh; width: auto;" alt="...">
+        </div>
+        <p class="p-1 m-5">{{postExtend.description}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ export class UserDTO {
   alias: string;
   birth_date: Date;
   email: string;
+  telephon!: number;
   password: string;
   worker?: any;
   userrol: string;
