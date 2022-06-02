@@ -37,13 +37,9 @@ const routes: Routes = [
       {
         path: 'contacta',
         component: ContactaComponent,
-      },
-      {
-        path: '*',
-        component: NoticiesComponent,
-      },
+      }
     ],
-  },
+  }
 ];
 
 @NgModule({
