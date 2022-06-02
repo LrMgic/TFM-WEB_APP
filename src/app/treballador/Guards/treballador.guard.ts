@@ -26,11 +26,12 @@ export class TreballadorGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const access_token = this.localStorageService.get('access_token');
-    if (access_token) {
+    const userrol = this.localStorageService.get('userrol');
+    if (userrol === 'Treballador') {
       // logged in so return true
       return true;
     }
+
 
     this.router.navigate(['']);
 

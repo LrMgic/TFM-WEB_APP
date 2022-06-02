@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HeaderMenus } from './user/Models/identification-status.dto';
-import { NavbarMenus } from './user/Models/navbar-menus.dto';
 import { HeaderMenusService } from './user/Services/header-menus.service';
 import { LocalStorageService } from './user/Services/local-storage.service';
 
