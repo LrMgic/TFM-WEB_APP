@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { NONE_TYPE } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { PostDTO } from '../Models/post.dto';
 
@@ -20,7 +19,8 @@ export class PostService {
 
   constructor(private http: HttpClient) {
     this.controller = 'posts';
-    this.urlPFMUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlPFMUocApi = 'http://tfm-api.netlify.app/' + this.controller;
+    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
   }
 
   getPosts(): Promise<PostDTO[] | any> {
@@ -38,9 +38,7 @@ export class PostService {
   }
 
   getPostById(postId: string): Promise<PostDTO | any> {
-    return this.http
-      .get<PostDTO>(this.urlPFMUocApi + '/' + postId)
-      .toPromise();
+    return this.http.get<PostDTO>(this.urlPFMUocApi + '/' + postId).toPromise();
   }
 
   updatePost(postId: string, post: PostDTO): Promise<PostDTO | any> {

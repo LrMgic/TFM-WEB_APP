@@ -7,36 +7,34 @@ import { UserDTO } from '../Models/user.dto';
   providedIn: 'root',
 })
 export class OrderService {
-  private urlBlogUocApi: string;
+  private urlTFMUocApi: string;
   private controller: string;
 
   constructor(private http: HttpClient) {
     this.controller = 'orders';
-    this.urlBlogUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlTFMUocApi = 'http://tfm-api.netlify.app/' + this.controller;
+    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
   }
 
   getOrders(): Promise<UserDTO[] | any> {
-    return this.http.get<UserDTO[]>(this.urlBlogUocApi).toPromise();
+    return this.http.get<UserDTO[]>(this.urlTFMUocApi).toPromise();
   }
   getOrdersByUserId(userId: string): Promise<UserDTO[] | any> {
     return this.http
-      .get<OrderDTO[]>(this.urlBlogUocApi + '/' + userId)
+      .get<OrderDTO[]>(this.urlTFMUocApi + '/' + userId)
       .toPromise();
   }
 
   getOrderById(serch: SerchOrderDTO): Promise<SerchOrderDTO | any> {
-    return this.http
-      .get<OrderDTO>(this.urlBlogUocApi + '/' + serch)
-      .toPromise();
+    return this.http.get<OrderDTO>(this.urlTFMUocApi + '/' + serch).toPromise();
   }
   createOrder(order: OrderDTO): Promise<OrderDTO | any> {
-    return this.http.post<OrderDTO>(this.urlBlogUocApi, order).toPromise();
+    return this.http.post<OrderDTO>(this.urlTFMUocApi, order).toPromise();
   }
 
   updateOrder(orderId: string, order: OrderDTO): Promise<OrderDTO | any> {
     return this.http
-      .put<OrderDTO>(this.urlBlogUocApi + '/' + orderId, order)
+      .put<OrderDTO>(this.urlTFMUocApi + '/' + orderId, order)
       .toPromise();
   }
-
 }

@@ -18,7 +18,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
     this.controller = 'auth';
-    this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlTFMUocApi = 'http://tfm-api.netlify.app/' + this.controller;
+    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
   }
 
   login(auth: AuthDTO): Promise<AuthToken | any> {
