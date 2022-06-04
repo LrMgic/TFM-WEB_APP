@@ -19,8 +19,7 @@ export class PostService {
 
   constructor(private http: HttpClient) {
     this.controller = 'posts';
-    this.urlPFMUocApi = 'http://tfm-api.netlify.app/' + this.controller;
-    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlPFMUocApi = process.env.API_URL + this.controller;
   }
 
   getPosts(): Promise<PostDTO[] | any> {

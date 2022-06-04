@@ -13,8 +13,7 @@ export class ContactService {
 
   constructor(private http: HttpClient) {
     this.controller = 'contact';
-    this.urlTFMUocApi = 'http://tfm-api.netlify.app/' + this.controller;
-    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlTFMUocApi = process.env.API_URL + this.controller;
   }
 
   getContacts(): Promise<ContactDTO[] | any> {

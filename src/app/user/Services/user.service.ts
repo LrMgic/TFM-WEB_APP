@@ -11,8 +11,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {
     this.controller = 'users';
-    this.urlTFMUocApi = 'http://tfm-api.netlify.app/' + this.controller;
-    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlTFMUocApi = process.env.API_URL + this.controller;
   }
 
   register(user: UserDTO): Promise<UserDTO | any> {
