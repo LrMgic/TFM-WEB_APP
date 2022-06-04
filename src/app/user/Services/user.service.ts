@@ -11,7 +11,8 @@ export class UserService {
 
   constructor(private http: HttpClient) {
     this.controller = 'users';
-    this.urlTFMUocApi = process.env.API_URL + this.controller;
+    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlTFMUocApi = 'https://tfm-api.herokuapp.com/' + this.controller;
   }
 
   register(user: UserDTO): Promise<UserDTO | any> {

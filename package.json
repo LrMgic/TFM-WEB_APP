@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "netlify": "./node_modules/.bin/netlify"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +19,6 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
-    "@netlify/functions": "^1.0.0",
     "@ng-bootstrap/ng-bootstrap": "^12.0.0",
     "@ngrx/store": "^13.0.2",
     "@popperjs/core": "^2.10.2",
@@ -36,13 +34,13 @@
     "@angular/cli": "~13.2.5",
     "@angular/compiler-cli": "~13.2.0",
     "@types/jasmine": "~3.10.0",
-    "@types/node": "^14.18.20",
+    "@types/node": "^12.11.1",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "^4.7.3"
+    "typescript": "~4.5.2"
   }
 }

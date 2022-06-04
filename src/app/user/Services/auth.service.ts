@@ -18,7 +18,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
     this.controller = 'auth';
-    this.urlTFMUocApi = process.env.API_URL + this.controller;
+    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlTFMUocApi = 'https://tfm-api.herokuapp.com/' + this.controller;
   }
 
   login(auth: AuthDTO): Promise<AuthToken | any> {

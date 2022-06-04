@@ -12,7 +12,8 @@ export class OrderService {
 
   constructor(private http: HttpClient) {
     this.controller = 'orders';
-    this.urlTFMUocApi = process.env.API_URL + this.controller;
+    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlTFMUocApi = 'https://tfm-api.herokuapp.com/' + this.controller;
   }
 
   getOrders(): Promise<UserDTO[] | any> {

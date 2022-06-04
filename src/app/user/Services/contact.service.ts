@@ -13,7 +13,8 @@ export class ContactService {
 
   constructor(private http: HttpClient) {
     this.controller = 'contact';
-    this.urlTFMUocApi = process.env.API_URL + this.controller;
+    // this.urlTFMUocApi = 'http://localhost:3000/' + this.controller;
+    this.urlTFMUocApi = 'https://tfm-api.herokuapp.com/' + this.controller;
   }
 
   getContacts(): Promise<ContactDTO[] | any> {
