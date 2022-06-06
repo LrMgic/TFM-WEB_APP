@@ -13,9 +13,9 @@
       <button type="button" class="btn btn-primary dropdown-toggle mx-1" id="dropdownMenuButtonFabrica" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false" *ngIf="showClientSection">{{ alias }}</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonFabrica" *ngIf="showClientSection">
-        <button class="dropdown-item btn btn-link" type="button" routerLink="">Inisi</button>
-        <button class="dropdown-item btn btn-link" type="button" routerLink="/client">Area personal</button>
-        <button class="dropdown-item btn btn-link" type="button" routerLink="/treballador" *ngIf="showWorkerSection">Area de treball</button>
+        <button class="dropdown-item btn btn-link" type="button" routerLink="">Inici</button>
+        <button class="dropdown-item btn btn-link" type="button" routerLink="/client">Àrea personal</button>
+        <button class="dropdown-item btn btn-link" type="button" routerLink="/treballador" *ngIf="showWorkerSection">Àrea de treball</button>
       </div>
       <button type="button" class="btn btn-secondary btn-block mx-1" (click)="logout()"
         *ngIf="showClientSection">Logout</button>
