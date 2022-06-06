@@ -18,7 +18,7 @@ export class NoticiesComponent implements OnInit {
     this.posts = [
       {
         postId: '1',
-        title: 'NOticia 1',
+        title: 'Noticia 1',
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.',
         publication_date: new Date('2022-05-8 22:15:57.356'),
@@ -27,7 +27,7 @@ export class NoticiesComponent implements OnInit {
       },
       {
         postId: '2',
-        title: 'NOticia 1',
+        title: 'Noticia 1',
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.',
         publication_date: new Date('2022-05-9 22:15:57.356'),
@@ -36,7 +36,7 @@ export class NoticiesComponent implements OnInit {
       },
       {
         postId: '3',
-        title: 'NOticia 1',
+        title: 'Noticia 1',
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.',
         publication_date: new Date('2022-05-10 22:15:57.356'),
@@ -45,7 +45,7 @@ export class NoticiesComponent implements OnInit {
       },
       {
         postId: '4',
-        title: 'NOticia 1',
+        title: 'Noticia 1',
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.',
         publication_date: new Date('2022-05-11 22:15:57.356'),
@@ -54,7 +54,7 @@ export class NoticiesComponent implements OnInit {
       },
       {
         postId: '5',
-        title: 'NOticia 1',
+        title: 'Noticia 1',
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto dolore a distinctio, beatae itaque quam veniam exercitationem totam autem quod enim numquam vero, soluta molestiae voluptas nemo alias ullam.',
         publication_date: new Date('2022-05-12 22:15:57.356'),
